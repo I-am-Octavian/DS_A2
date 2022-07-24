@@ -1,17 +1,16 @@
 #include <stdio.h>
+#include "RandomArray.h"
 
 int main(void)
 {
-    printf("Enter length of array\n");
-    int n;
-    scanf("%d", &n);
-    printf("Enter elements of array\n");
+    int n = 120;
     int array[n];
-    for(int i = 0; i < n; i++)
-    {
-        scanf("%d", &array[i]);
-    }
+    RandomArrayGenerator(array, n);
 
+    clock_t start, end;
+    double cpu_time_used;
+    
+    start = clock();
     for(int i = 0; i < n; i++)
     {
         int min = i;
@@ -24,9 +23,9 @@ int main(void)
         array[i] = array[min];
         array[min] = temp;
     }
+    end = clock();
 
-    for(int i = 0; i < n; i++)
-    {
-        printf("%d ", array[i]);
-    }
+    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+
+    printf("Time to execute : %lf \n", time_taken);
 }
