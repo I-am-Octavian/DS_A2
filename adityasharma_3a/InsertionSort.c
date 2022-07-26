@@ -11,18 +11,15 @@ int main(void)
     double cpu_time_used;
     
     start = clock();
-    for(int i = 0; i < n; i++)
+    for(int j = 1; j < n; j++)
     {
-        int key = i;
-        for(int j = 0; j < i; j++)
+        int key = array[j];
+        int i;
+        for(i = j-1; i >= 0 && array[i] > key; i--)
         {
-            if(array[j] > array[key])
-            {
-                int temp = array[j];
-                array[j] = array[key];
-                array[key] = temp;
-            }
+            array[i+1] = array[i];
         }
+        array[i+1] = key;
     }
     end = clock();
 
