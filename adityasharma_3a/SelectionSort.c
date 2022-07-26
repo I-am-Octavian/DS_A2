@@ -11,7 +11,7 @@ int main(void)
     double cpu_time_used;
     
     start = clock();
-    for(int i = 0; i < n; i++)
+    for(int i = 1; i < n; i++)
     {
         int min = i;
         for(int j = i+1; j < n; j++)
