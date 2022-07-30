@@ -2,3 +2,8 @@
 *.out
 
 *.json
+*.pdf
+
+*.csv
+*.xlxs
+*.ods
