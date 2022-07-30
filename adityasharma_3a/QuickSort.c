@@ -59,9 +59,4 @@ int main(void)
     double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
 
     printf("Time to execute : %lf \n", time_taken);
-
-    for(int i = 0; i < n; i++)
-    {
-        printf("%d ", array[i]);
-    }
 }
